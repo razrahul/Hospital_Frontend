@@ -18,30 +18,27 @@ function HeaderMain() {
   };
 
   return (
-    <nav className="bg-white border-black">
-      {/* Single Flex Container */}
+    <nav className="bg-white border-black top-10 fixed w-full z-50 shadow-sm">
       <div className="mx-auto max-w-screen-xl p-4">
-        {/* Container for Logo, Navbar, and Hamburger (Mobile View) */}
         <div className="flex justify-between items-center">
-          {/* Left: Logo */}
           <a
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src="/logo/loonalogo.webp"
-              className="h-16"
+              src="/logo/loonalogo.png"
+              className="h-16 text-"
               alt="Loonahospital Logo"
             />
           </a>
 
-          {/* Middle: Navbar Links (visible on larger screens) */}
-          <div className="hidden sm:flex flex-grow justify-center">
+          {/* Desktop and Tablet Navigation */}
+          <div className="hidden md:flex text-lg flex-grow justify-center">
             <ul className="flex space-x-8">
               <li>
                 <a
                   href="/about"
-                  className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                  className="block py-2 px-3 hover:underline underline-offset-25 decoration-5 decoration-blue-800 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0"
                   aria-current="page"
                 >
                   About
@@ -50,7 +47,7 @@ function HeaderMain() {
               <li>
                 <button
                   onClick={toggleDropdown}
-                  className="flex items-center justify-between w-full py-2 px-3 text-black rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0"
+                  className="flex items-center hover:underline underline-offset-25 decoration-5 decoration-blue-800 justify-between w-full py-2 px-3 text-black rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-800 md:p-0"
                 >
                   Treatment{" "}
                   <svg
@@ -72,12 +69,10 @@ function HeaderMain() {
                 </button>
               </li>
 
-              {/* Navbar Dropdown for Desktop */}
-          
               <li>
                 <button
                   onClick={toggleNavbarDropdown}
-                  className="flex items-center justify-between w-full py-2 px-3 text-black hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+                  className="flex items-center hover:underline underline-offset-25 decoration-5 decoration-blue-800 justify-between w-full py-2 px-3 text-black hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-800 md:p-0"
                 >
                   Media
                   <svg
@@ -98,7 +93,6 @@ function HeaderMain() {
                   </svg>
                 </button>
 
-                {/* Navbar Dropdown Menu */}
                 <div
                   className={`z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 absolute mt-2 ${
                     isDropdownNavbarOpen ? "block" : "hidden"
@@ -127,7 +121,7 @@ function HeaderMain() {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                  className="block py-2 px-3 hover:underline underline-offset-25 decoration-5 decoration-blue-800 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0"
                 >
                   Articles
                 </a>
@@ -135,7 +129,7 @@ function HeaderMain() {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                  className="block py-2 px-3 hover:underline underline-offset-25 decoration-5 decoration-blue-800 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0"
                 >
                   Contact Us
                 </a>
@@ -143,14 +137,13 @@ function HeaderMain() {
             </ul>
           </div>
 
-          {/* Right: Book Appointment Button (only visible on desktop) */}
-          <div className="hidden md:block">
-            <button className="px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-600 transition duration-300">
+          <div className="hidden md:block text-xl">
+            <button className="px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-800 transition duration-300">
               Book Appointment
             </button>
           </div>
 
-          {/* Right: Hamburger Icon (for Mobile) */}
+          {/* Mobile and Tablet Hamburger Menu Button */}
           <button
             className="block md:hidden text-black"
             onClick={toggleMobileMenu}
@@ -160,7 +153,6 @@ function HeaderMain() {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
@@ -172,9 +164,9 @@ function HeaderMain() {
           </button>
         </div>
 
-        {/* Navbar Links for Mobile (shown when mobile menu is open) */}
+        {/* Mobile Menu (for sm and md screens) */}
         <div
-          className={`mt-4 md:hidden justify-between items-center ${
+          className={`mt-4 md:hidden justify-between text-lg items-center ${
             isMobileMenuOpen ? "block" : "hidden"
           }`}
         >
@@ -182,7 +174,7 @@ function HeaderMain() {
             <li>
               <a
                 href="/"
-                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0"
                 aria-current="page"
               >
                 Home
@@ -191,7 +183,7 @@ function HeaderMain() {
             <li>
               <button
                 onClick={toggleDropdown}
-                className="flex items-center justify-between w-full py-2 px-3 text-black rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0"
+                className="flex items-center justify-between w-full py-2 px-3 text-black rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-800 md:p-0"
               >
                 Treatment{" "}
                 <svg
@@ -213,58 +205,57 @@ function HeaderMain() {
               </button>
             </li>
             <li>
-                <button
-                  onClick={toggleNavbarDropdown}
-                  className="flex items-center justify-between w-full py-2 px-3 text-black hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                >
-                  Dropdown
-                  <svg
-                    className={`w-2.5 h-2.5 ms-2.5 transition-transform duration-200 ${
-                      isDropdownNavbarOpen ? "rotate-180" : ""
-                    }`}
-                    aria-hidden="true"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m1 1 4 4 4-4"
-                    />
-                  </svg>
-                </button>
-
-                {/* Navbar Dropdown Menu */}
-                <div
-                  className={`z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 absolute mt-2 ${
-                    isDropdownNavbarOpen ? "block" : "hidden"
+              <button
+                onClick={toggleNavbarDropdown}
+                className="flex items-center justify-between w-full py-2 px-3 text-black hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-800 md:p-0"
+              >
+                Dropdown
+                <svg
+                  className={`w-2.5 h-2.5 ms-2.5 transition-transform duration-200 ${
+                    isDropdownNavbarOpen ? "rotate-180" : ""
                   }`}
+                  aria-hidden="true"
+                  fill="none"
+                  viewBox="0 0 10 6"
                 >
-                  <ul className="py-2 text-sm text-gray-700">
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                        Dashboard
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                        Earnings
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                        Sign out
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+
+              <div
+                className={`z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 absolute mt-2 ${
+                  isDropdownNavbarOpen ? "block" : "hidden"
+                }`}
+              >
+                <ul className="py-2 text-sm text-gray-700">
+                  <li>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                      Dashboard
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                      Earnings
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                      Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0"
               >
                 Marketplace
               </a>
@@ -272,7 +263,7 @@ function HeaderMain() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0"
               >
                 Resources
               </a>
@@ -280,7 +271,7 @@ function HeaderMain() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0"
               >
                 Contact
               </a>
@@ -289,10 +280,10 @@ function HeaderMain() {
         </div>
       </div>
 
-      {/* Dropdown Menu for Treatment on Mobile */}
+      {/* Mega Menu */}
       <div
         id="mega-menu-full-dropdown"
-        className={`mt-1 border-gray-200 shadow-xs bg-gray-50  md:bg-white border-y ${
+        className={`mt-1 border-gray-200 shadow-xs bg-gray-50 md:bg-white border-y ${
           isDropdownOpen ? "block" : "hidden"
         }`}
       >
